@@ -23,10 +23,10 @@ const DeckList = () => {
   }, []);
 
   return (
-    <div className="row">
-      <DeckForm />
+    <div className="row p-4">
+      <DeckForm key={2}/>
       {decks.map((deck) => {
-        return <DeckItem deck={deck} key={deck._id} />;
+        return <div className="col md-4"> <DeckItem deck={deck} key={deck._id} /></div>;
       })}
     </div>
   );

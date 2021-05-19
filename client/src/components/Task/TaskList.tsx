@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+
 import { Task } from './Task';
+import TaskForm from './TaskForm';
 import TaskItem from './TaskItem';
 import * as taskService from './TaskService';
 
@@ -25,9 +27,14 @@ const TaskList = (props: Deck) => {
 
   return (
     <div className="row">
-      {tasks.map((task) => {
-        return <TaskItem task={task} key={task._id} />;
-      })}
+      <div className="row">
+        <TaskForm deckId={props.deckId} key={1} />
+      </div>
+      <div className="row p-2">
+        {tasks.map((task) => {
+          return <div className="col md-4"><TaskItem task={task} key={task._id} /></div>;
+        })}
+      </div>
     </div>
   );
 };
