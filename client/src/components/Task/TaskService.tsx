@@ -10,3 +10,7 @@ export const getTasks = async (boardId: string, deckId: string) => {
 export const createTask = async (task:Task, boardId: string, deckId: string) => {
   return await axios.post<Task[]>(`${API}/${boardId}/${deckId}`, task);
 };
+
+export const deleteTask = async (boardId: string, task:Task) => {
+  return await axios.delete<Task>(`${API}/${boardId}/${task.deckId}/${task._id}`);
+};
