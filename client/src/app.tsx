@@ -9,12 +9,13 @@ import Navbar from "./components/Navbar/Navbar";
 function App() {
   return (
     <BrowserRouter>
-
-      
-      <Switch>
-        <Route exact path="/" component={BoardList}></Route>
-        <Route path="/new-board" component={BoardForm}></Route>
-      </Switch>
+      <Navbar />
+      <div className="container p-4">
+        <Switch>
+          <Route exact path="/" component={BoardList}></Route>
+          <Route path="/new-board" component={BoardForm}></Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
