@@ -1,12 +1,12 @@
-import React, { ChangeEvent, FormEvent, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Board } from "./Board";
-import * as boardService from "./BoardService";
-import { toast } from "react-toastify";
+import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Board } from './Board';
+import * as boardService from './BoardService';
+import { toast } from 'react-toastify';
 
 function BoardForm() {
   const history = useHistory();
-  const [board, setBoard] = useState<Board>({ title: "", description: "" });
+  const [board, setBoard] = useState<Board>({ title: '', description: '' });
 
   const handleInputChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -15,9 +15,9 @@ function BoardForm() {
   };
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("New board added");
+    toast.success('New board added');
     await boardService.createBoard(board);
-    history.push("/");
+    history.push('/');
   };
 
   return (

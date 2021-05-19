@@ -1,5 +1,5 @@
-import { RequestHandler } from "express";
-import Task from "../models/tasks.models";
+import { RequestHandler } from 'express';
+import Task from '../models/tasks.models';
 
 export const getTask: RequestHandler = async (req, res) => {
   try {
@@ -44,5 +44,5 @@ export const deleteTask: RequestHandler = async (req, res) => {
 };
 
 export const updateTask: RequestHandler = (req, res) => {
-  res.json("Update task");
+  res.json('Update task');
 };

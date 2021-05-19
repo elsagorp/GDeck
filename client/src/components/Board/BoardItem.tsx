@@ -1,7 +1,8 @@
-import React from "react";
-import { Board } from "./Board";
-import "./BoardItem.css";
-import {useHistory} from 'react-router-dom'
+import React from 'react';
+import { Board } from './Board';
+import './BoardItem.css';
+import { useHistory } from 'react-router-dom';
+import * as BoardService from './BoardService';
 
 interface Props {
   board: Board;
@@ -9,15 +10,24 @@ interface Props {
 
 function BoardItem({ board }: Props) {
   const history = useHistory();
+  const handleDelete = async (id: string) => {
+    await BoardService.deleteBoard(id);
+  };
+  
   return (
     <div className="col-md-4">
-      <div
-        className="card card-body board-card"
-        onClick={() => history.push(`/board/${board._id}`)}
-      >
+      <div className="card card-body board-card">
         <div className="d-flex justify-content-between">
-          <h1>{board.title}</h1>
-          <span className="text-danger"> X </span>
+          <h1 onClick={() => history.push(`/board/${board._id}`)}>
+            {board.title}
+          </h1>
+          <span
+            className="text-danger"
+            onClick={() => board._id && handleDelete(board._id) }
+          >
+            {' '}
+            X{' '}
+          </span>
         </div>
         <p>{board.description}</p>
       </div>

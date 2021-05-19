@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 const deckSchema = new Schema({
   title: {
@@ -14,8 +14,8 @@ const deckSchema = new Schema({
   },
   boardId: {
     type: Schema.Types.ObjectId,
-    ref: "Board",
+    ref: 'Board',
   },
 });
 
-export default model("Deck", deckSchema);
+export default model('Deck', deckSchema);
