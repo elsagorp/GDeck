@@ -1,6 +1,7 @@
 import { RequestHandler } from 'express';
 
 import Board from '../models/boards.models';
+import Deck from '../models/decks.models';
 
 export const getBoard: RequestHandler = async (req, res) => {
   try {
@@ -34,10 +35,20 @@ export const createBoard: RequestHandler = async (req, res) => {
   }
 };
 
+// export const deleteBoard: RequestHandler = async (req, res) => {
+//   try {
+//     const boardDeleted = await Board.findByIdAndDelete(req.params.boardId);
+//     res.json(boardDeleted);
+//   } catch (error) {
+//     res.status(404).json();
+//   }
+// };
+
 export const deleteBoard: RequestHandler = async (req, res) => {
   try {
     const boardDeleted = await Board.findByIdAndDelete(req.params.boardId);
-    res.json(boardDeleted);
+    const deckDeleted = await Deck.deleteMany({ boardId:req.params.boardId})
+    res.json(deckDeleted);
   } catch (error) {
     res.status(404).json();
   }

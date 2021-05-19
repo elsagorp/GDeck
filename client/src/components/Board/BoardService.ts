@@ -10,3 +10,7 @@ export const getBoards = async () => {
 export const createBoard = async (board: Board) => {
   return await axios.post(`${API}`, board);
 };
+
+export const deleteBoard = async (id: string) => {
+  return await axios.delete(`${API}/${id}`);
+};
