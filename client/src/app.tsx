@@ -13,14 +13,14 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="container p-4">
+      
         <Switch>
           <Route exact path="/" component={BoardList}></Route>
           <Route path="/new-board" component={BoardForm}></Route>
           <Route path="/board/:boardId" component={DeckList}></Route>
         </Switch>
         <ToastContainer />
-      </div>
+
     </BrowserRouter>
   );
 }
