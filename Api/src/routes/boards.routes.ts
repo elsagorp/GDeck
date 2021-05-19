@@ -6,8 +6,6 @@ const router = Router();
 
 router.get("/", boardCtrl.getBoards);
 
-router.get("/:boardId", boardCtrl.getBoard);
-
 router.post("/", boardCtrl.createBoard);
 
 router.delete("/:boardId", boardCtrl.deleteBoard);
