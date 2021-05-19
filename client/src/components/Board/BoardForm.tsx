@@ -1,8 +1,11 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Board } from "./Board";
-import * as boardService from './BoardService'
+import * as boardService from "./BoardService";
+import { toast } from "react-toastify";
 
 function BoardForm() {
+  const history = useHistory();
   const [board, setBoard] = useState<Board>({ title: "", description: "" });
 
   const handleInputChange = (
@@ -10,12 +13,12 @@ function BoardForm() {
   ) => {
     setBoard({ ...board, [e.target.name]: e.target.value });
   };
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) =>{
-    e.preventDefault()
-    
-    const res = await boardService.createBoard(board);
-    console.log(res)
-  }
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast.success("New board added");
+    await boardService.createBoard(board);
+    history.push("/");
+  };
 
   return (
     <div className="row">

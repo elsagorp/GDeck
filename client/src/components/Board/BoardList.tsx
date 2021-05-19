@@ -16,9 +16,9 @@ const BoardList = () => {
   }, []);
 
   return (
-    <div>
+    <div className="row">
       {boards.map((board) => {
-        return <BoardItem board={board}/>
+        return <BoardItem board={board} key={board._id}/>
       })}
     </div>
   );
