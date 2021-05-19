@@ -35,15 +35,6 @@ export const createBoard: RequestHandler = async (req, res) => {
   }
 };
 
-// export const deleteBoard: RequestHandler = async (req, res) => {
-//   try {
-//     const boardDeleted = await Board.findByIdAndDelete(req.params.boardId);
-//     res.json(boardDeleted);
-//   } catch (error) {
-//     res.status(404).json();
-//   }
-// };
-
 export const deleteBoard: RequestHandler = async (req, res) => {
   try {
     const boardDeleted = await Board.findByIdAndDelete(req.params.boardId);

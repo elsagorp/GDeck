@@ -1,6 +1,7 @@
 import { RequestHandler } from 'express';
 
 import Deck from '../models/decks.models';
+import Task from '../models/tasks.models'
 
 export const getDeck: RequestHandler = async (req, res) => {
   try {
@@ -35,12 +36,14 @@ export const createDeck: RequestHandler = async (req, res) => {
 
 export const deleteDeck: RequestHandler = async (req, res) => {
   try {
-    const deckFound = await Deck.findByIdAndDelete(req.params.deckId);
-    res.json(deckFound);
+    const deckDeleted = await Deck.findByIdAndDelete(req.params.deckId);
+    const taskDeleted = await Task.deleteMany({ deckId:req.params.deckId})
+    res.json(deckDeleted);
   } catch (error) {
     res.status(404).json();
   }
 };
+
 
 export const updateDeck: RequestHandler = async (req, res) => {
   res.json('Update task');
