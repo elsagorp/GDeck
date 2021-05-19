@@ -10,8 +10,6 @@ interface currentLocation {
 }
 const DeckList = () => {
   const location: currentLocation = useParams();
-
-  console.log(location);
   const [decks, setDeacks] = useState<Deck[]>([]);
   const loadDeacks = async () => {
     const res = await deckService.getDecks(location.boardId);

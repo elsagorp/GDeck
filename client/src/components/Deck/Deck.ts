@@ -1,5 +1,5 @@
 export interface Deck {
-  _id?: string
+  _id?: string;
   title?: string;
-  boardId?: String;
+  boardId?: string;
 }

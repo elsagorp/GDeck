@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import TasksList from '../Task/TaskList'
 import { Deck } from "./Deck";
 
 interface Props {
@@ -14,6 +14,8 @@ function DeckItem({ deck }: Props) {
           <h1>{deck.title}</h1>
           <span className="text-danger"> X </span>
         </div>
+        
+        <TasksList  deckId = {`${deck._id}`} />
       </div>
     </div>
   );
