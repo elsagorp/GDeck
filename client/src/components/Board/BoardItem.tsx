@@ -1,7 +1,7 @@
-import React from "react";
-import { Board } from "./Board";
-import "./BoardItem.css";
-import {useHistory} from 'react-router-dom'
+import React from 'react';
+import { Board } from './Board';
+import './BoardItem.css';
+import { useHistory } from 'react-router-dom';
 
 interface Props {
   board: Board;

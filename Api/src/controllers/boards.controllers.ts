@@ -1,6 +1,6 @@
-import { RequestHandler } from "express";
+import { RequestHandler } from 'express';
 
-import Board from "../models/boards.models";
+import Board from '../models/boards.models';
 
 export const getBoard: RequestHandler = async (req, res) => {
   try {
@@ -23,7 +23,7 @@ export const getBoards: RequestHandler = async (req, res) => {
 export const createBoard: RequestHandler = async (req, res) => {
   try {
     if (await Board.findOne({ title: req.body.title })) {
-      return res.status(301).json({ message: "The board already exist" });
+      return res.status(301).json({ message: 'The board already exist' });
     } else {
       const newBoard = new Board(req.body);
       const savedBoard = newBoard.save();

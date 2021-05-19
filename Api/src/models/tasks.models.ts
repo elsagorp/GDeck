@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 const taskSchema = new Schema(
   {
@@ -13,11 +13,11 @@ const taskSchema = new Schema(
     },
     deckId: {
       type: Schema.Types.ObjectId,
-      ref: "Deck",
+      ref: 'Deck',
       require: true,
       trim: true,
     },
-    date: Date
+    date: Date,
   },
   {
     versionKey: false,
@@ -25,4 +25,4 @@ const taskSchema = new Schema(
   }
 );
 
-export default model("Task", taskSchema);
+export default model('Task', taskSchema);

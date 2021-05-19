@@ -1,5 +1,5 @@
-import mongoose, { ConnectOptions } from "mongoose";
-import config from "./config";
+import mongoose, { ConnectOptions } from 'mongoose';
+import config from './config';
 
 const uri = config.URI;
 
@@ -10,7 +10,7 @@ const uri = config.URI;
       useNewUrlParser: true,
     };
     const db = await mongoose.connect(`${uri}`, mongooseOptions);
-    console.log("Database is connected to", db.connection.name);
+    console.log('Database is connected to', db.connection.name);
   } catch (error) {
     console.log(error);
   }

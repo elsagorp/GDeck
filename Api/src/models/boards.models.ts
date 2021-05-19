@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 const boardSchema = new Schema(
   {
@@ -18,4 +18,4 @@ const boardSchema = new Schema(
   }
 );
 
-export default model("Board", boardSchema);
+export default model('Board', boardSchema);

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { Task } from "./Task";
-import TaskItem from "./TaskItem";
-import * as taskService from "./TaskService";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import { Task } from './Task';
+import TaskItem from './TaskItem';
+import * as taskService from './TaskService';
 
 interface Deck {
   deckId: string;
