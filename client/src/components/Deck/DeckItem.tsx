@@ -8,7 +8,7 @@ interface Props {
 
 function DeckItem({ deck }: Props) {
   return (
-    <div className="col-sm-1">
+    <div className="col md-4">
       <div className="card card-body board-card">
         <div className="d-flex justify-content-between">
           <h1>{deck.title}</h1>
