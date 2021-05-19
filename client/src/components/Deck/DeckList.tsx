@@ -4,6 +4,7 @@ import { Deck } from './Deck';
 import * as deckService from './DeckService';
 import DeckItem from './DeckItem';
 import { useParams } from 'react-router';
+import DeckForm from './DeckForm';
 
 interface currentLocation {
   boardId: string;
@@ -23,6 +24,7 @@ const DeckList = () => {
 
   return (
     <div className="row">
+      <DeckForm />
       {decks.map((deck) => {
         return <DeckItem deck={deck} key={deck._id} />;
       })}
